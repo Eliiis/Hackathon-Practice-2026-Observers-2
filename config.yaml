@@ -1,0 +1,43 @@
+paths:
+  processed: data/processed
+  artifacts: artifacts
+  submissions: submissions
+  reports: reports
+
+data:
+  train: data/raw/train.csv
+  test: data/raw/test.csv
+  sep: ";"
+  encoding: utf-8
+  id: id
+  date: dt
+  target: target
+  weight: w
+
+split:
+  folds: 5
+
+shift:
+  train_prior: [0.34994449241396325, 0.317688417417047, 0.21111385222647094,
+                0.08535833230541508, 0.035894905637103736]
+  test_prior: [0.320536785505868, 0.32165872844460647, 0.22167488827336632,
+               0.09040139371899762, 0.045728204057161596]
+
+model:
+  seed: 42
+  trees: 400
+  max_bin: 32
+  max_leaves: 63
+  learning_rate: 0.03
+  threads: -1
+  gate_trees: 400
+  gate_learning_rate: 0.05
+  gate_threshold: 150000
+  blend_solo: 0.3
+  expert_context_from: 100000
+  expert_context_weight: 0.3
+
+submission:
+  sep: ";"
+  id: id
+  prediction: predict
